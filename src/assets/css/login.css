@@ -1,0 +1,138 @@
+@import 'https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@100;300&display=swap';
+
+:root {
+    --orange: #995D00;
+    --orange-dark: #412700;
+    --gray: #404040;
+
+    --font: 'Fira Sans';
+}
+
+body {
+    background: url('../img/01.jpg');
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.container .form-group {
+    grid-column: 2/5;
+    text-align: center;
+    border-radius: 0px 0px 60px 60px;
+    background-color: var(--orange);
+    border-bottom: 45px solid var(--orange-dark);
+    border-top: 25px solid var(--orange-dark);
+    padding: 60px 0px 80px 0px;
+}
+
+.container .form-group .form-title {
+    margin: 0px 0px 50px 0px;
+}
+
+.container .form-group .form-title h1 {
+    color: white;
+    text-shadow: 4px 4px var(--orange-dark);
+    font-size: 45px;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+.container .form-group .form-email {
+    margin: 0px 0px 20px 0px;
+}
+
+.container .form-group .form-password {
+    margin: 0px 0px 40px 0px;
+}
+
+.container .form-group .form-email input,
+.container .form-group .form-password input {
+    width: 220px;
+    height: 30px;
+    text-align: center;
+    font-family: var(--font);
+    border-bottom: 4px solid var(--orange-dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+}
+
+.container .form-group .form-button {
+    margin: 0px 0px 40px 0px;
+}
+
+.container .form-group .form-button button {
+    padding: 8px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid var(--orange-dark);
+    font-family: var(--font);
+    font-size: 15px;
+    color: var(--orange-dark);
+}
+
+.container .form-group .form-button button:hover {
+    color: white;
+    background-color: var(--orange-dark);
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.container .form-group .form-link p {
+    color: white;
+    font-family: var(--font);
+}
+
+.container .form-group .form-link a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--orange-dark);
+}
+
+.container .form-group .form-link a:hover {
+    color: var(--gray);
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -o-transition: .2s ease;
+}
+
+/* ------------------------------------------------------ */
+.container .col-02 {
+    grid-column: 6/9;
+    background-color: var(--orange);
+    margin: 230px 0px 0px 0px;
+    text-align: center;
+    border-radius: 20px 20px 60px 60px;
+    height: 45%;
+    border-bottom: 40px solid var(--orange-dark);
+}
+
+.container .col-02 .title {
+    margin: 50px 0px 0px 0px;
+}
+
+.container .col-02 .title h1 {
+    color: white;
+    text-shadow: 4px 4px var(--orange-dark);
+    font-size: 35px;
+    font-family: var(--font);
+}
+
+.container .col-02 .text {
+    margin: 60px 0px 50px 0px;
+}
+
+.container .col-02 .text p {
+    color: white;
+    font-family: var(--font);
+    font-size: 18px;
+}
