@@ -11,8 +11,8 @@ export default class Intro extends Component {
                 </div>
                 <div className="text">
                     <p>
-                        Ven y Conoce <br/> 
-                        los detalles de tus películas favorítas
+                        Ven a Conocer <br/> 
+                        Los Detalles de tus Películas Favorítas
                     </p>
                 </div>
             </React.Fragment>

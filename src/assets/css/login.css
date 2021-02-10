@@ -1,15 +1,15 @@
 @import 'https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@100;300&display=swap';
 
 :root {
-    --orange: #995D00;
-    --orange-dark: #412700;
-    --gray: #404040;
+    --gray: #797979;
+    --gray-dark: #535353;
+    --gray-hover: #303030;
 
     --font: 'Fira Sans';
 }
 
 body {
-    background: url('../img/01.jpg');
+    background-image: url('../img/01.jpg');
     margin: 0;
     padding: 0;
 }
@@ -19,86 +19,87 @@ body {
     grid-template-columns: repeat(9, 1fr);
 }
 
-.container .form-group {
+.container .cont-login {
     grid-column: 2/5;
     text-align: center;
     border-radius: 0px 0px 60px 60px;
-    background-color: var(--orange);
-    border-bottom: 45px solid var(--orange-dark);
-    border-top: 25px solid var(--orange-dark);
+    background-color: var(--gray);
+    border-bottom: 45px solid var(--gray-dark);
+    border-top: 20px solid var(--gray-dark);
     padding: 60px 0px 80px 0px;
 }
 
-.container .form-group .form-title {
+.container .cont-login .title {
     margin: 0px 0px 50px 0px;
 }
 
-.container .form-group .form-title h1 {
+.container .cont-login .title h1 {
     color: white;
-    text-shadow: 4px 4px var(--orange-dark);
+    text-shadow: 4px 4px var(--gray-dark);
     font-size: 45px;
     font-family: var(--font);
     font-weight: bold;
 }
 
-.container .form-group .form-email {
+.container .cont-login .email {
     margin: 0px 0px 20px 0px;
 }
 
-.container .form-group .form-password {
+.container .cont-login .password {
     margin: 0px 0px 40px 0px;
 }
 
-.container .form-group .form-email input,
-.container .form-group .form-password input {
+.container .cont-login .email input,
+.container .cont-login .password input {
     width: 220px;
     height: 30px;
     text-align: center;
     font-family: var(--font);
-    border-bottom: 4px solid var(--orange-dark);
+    border-bottom: 4px solid var(--gray-dark);
     border-top: none;
     border-left: none;
     border-right: none;
     font-size: 15px;
 }
 
-.container .form-group .form-button {
+.container .cont-login .button {
     margin: 0px 0px 40px 0px;
 }
 
-.container .form-group .form-button button {
+.container .cont-login .button button {
     padding: 8px 10px;
     font-weight: bold;
     border-radius: 10px;
-    border: 2px solid var(--orange-dark);
+    border: 2px solid var(--gray-dark);
     font-family: var(--font);
     font-size: 15px;
-    color: var(--orange-dark);
+    color: var(--gray-dark);
+    outline: none;
 }
 
-.container .form-group .form-button button:hover {
+.container .cont-login .button button:hover {
     color: white;
-    background-color: var(--orange-dark);
+    background-color: var(--gray-dark);
     transition: .4s ease;
     -webkit-transition: .4s ease;
     -moz-transition: .4s ease;
     -o-transition: .4s ease;
 }
 
-.container .form-group .form-link p {
+.container .cont-login .link p {
     color: white;
     font-family: var(--font);
 }
 
-.container .form-group .form-link a {
+.container .cont-login .link a {
     text-decoration: none;
     font-weight: bold;
     font-size: 20px;
-    color: var(--orange-dark);
+    color: var(--gray-dark);
 }
 
-.container .form-group .form-link a:hover {
-    color: var(--gray);
+.container .cont-login .link a:hover {
+    color: var(--gray-hover);
     transition: .2s ease;
     -webkit-transition: .2s ease;
     -moz-transition: .2s ease;
@@ -108,12 +109,12 @@ body {
 /* ------------------------------------------------------ */
 .container .col-02 {
     grid-column: 6/9;
-    background-color: var(--orange);
+    background-color: var(--gray);
     margin: 230px 0px 0px 0px;
     text-align: center;
     border-radius: 20px 20px 60px 60px;
     height: 45%;
-    border-bottom: 40px solid var(--orange-dark);
+    border-bottom: 40px solid var(--gray-dark);
 }
 
 .container .col-02 .title {
@@ -122,7 +123,7 @@ body {
 
 .container .col-02 .title h1 {
     color: white;
-    text-shadow: 4px 4px var(--orange-dark);
+    text-shadow: 4px 4px var(--gray-dark);
     font-size: 35px;
     font-family: var(--font);
 }
@@ -134,5 +135,100 @@ body {
 .container .col-02 .text p {
     color: white;
     font-family: var(--font);
-    font-size: 18px;
+    font-size: 20px;
 }
+
+/* ------------------------------------------------------- */
+
+.container .cont-register {
+    grid-column: 4/7;
+    text-align: center;
+    background-color: var(--gray);
+    margin-top: 35%;
+    border-radius: 10px 10px 60px 60px;
+    border-bottom: 40px solid var(--gray-dark);
+    border-top: 20px solid var(--gray-dark);
+}
+
+
+.container .cont-register .title h1 {
+    color: white;
+    text-shadow: 4px 4px var(--gray-dark);
+    font-size: 45px;
+    font-family: var(--font);
+}
+
+.container .cont-register .email {
+    margin: 0px 0px 20px 0px;
+}
+
+.container .cont-register .password {
+    margin: 0px 0px 20px 0px;
+}
+
+.container .cont-register .email input,
+.container .cont-register .password input {
+    width: 220px;
+    height: 30px;
+    text-align: center;
+    font-family: var(--font);
+    border-bottom: 4px solid var(--gray-dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+}
+
+.container .cont-register hr {
+    width: 50%;
+    border: 2px solid var(--gray-hover);
+}
+
+
+.container .cont-register .button {
+    margin: 20px 0px 30px 0px;
+}
+
+.container .cont-register .button button {
+    padding: 8px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid var(--gray-dark);
+    font-family: var(--font);
+    font-size: 15px;
+    color: var(--gray-dark);
+    outline: none;
+}
+
+.container .cont-register .button button:hover {
+    color: white;
+    background-color: var(--gray-dark);
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.container .cont-register .link p {
+    color: white;
+    font-family: var(--font);
+}
+
+.container .cont-register .link a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--gray-dark);
+}
+
+.container .cont-register .link a:hover {
+    color: var(--gray-hover);
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -o-transition: .2s ease;
+}
+
+
+
+

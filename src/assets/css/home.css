@@ -1,0 +1,109 @@
+@import 'https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@100;300&display=swap';
+
+:root {
+    --gray: #797979;
+    --gray-dark: #535353;
+    --gray-hover: #303030;
+
+    --font: 'Fira Sans';
+}
+
+
+.container .cont-film {
+    grid-column: 2/9;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--gray);
+    border-radius: 30px 30px 30px 30px;
+    border-top: 20px solid var(--gray-dark);
+    border-bottom: 20px solid var(--gray-dark);
+}
+
+.container .cont-film .cont-search {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.container .cont-film .cont-search .title {
+    grid-column: 1/-1;
+    text-align: center;
+}
+
+.container .cont-film .cont-search .title h1 {
+    color: white;
+    text-shadow: 4px 4px var(--gray-hover);
+    font-family: var(--font);
+    font-size: 35px;
+    margin: 40px 0px 10px 0px;
+}
+
+.container .cont-film .cont-search .title hr {
+    width: 50%;
+    border: 2px solid var(--gray-hover);
+}
+
+.container .cont-film .cont-search .search {
+    grid-column: 1/-1;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+
+.container .cont-film .cont-search .search input {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-family: var(--font);
+    border: none;
+    border-bottom: 4px solid var(--gray-hover);
+    margin-right: 10px;
+    outline: none;
+}
+
+.container .cont-film .cont-search .search button {
+    padding: 7px 14px;
+    font-weight: bold;
+    border-radius: 7px;
+    border: 2px solid var(--gray-dark);
+    font-family: var(--font);
+    font-size: 15px;
+    color: var(--gray-dark);
+    outline: none;
+}
+
+.container .cont-film .cont-search .search button:hover {
+    color: white;
+    background-color: var(--gray-dark);
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.container .cont-film .film {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    padding: 50px;
+}
+
+.container .cont-film .film .film-info {
+    margin: 0px 10px 30px 10px;
+}
+
+.container .cont-film .film .film-info img {
+    max-width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    height: auto;
+}
+
+.container .cont-film .film .film-info .title h3 a {
+    color: var(--gray-hover);
+    font-family: var(--font);
+    text-decoration: none;
+}
+
+
+
