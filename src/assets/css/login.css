@@ -60,6 +60,7 @@ body {
     border-left: none;
     border-right: none;
     font-size: 15px;
+    outline: none;
 }
 
 .container .cont-login .button {

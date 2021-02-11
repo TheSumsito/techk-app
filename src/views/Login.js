@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
 
 //Assets
 import "../assets/css/login.css";
@@ -37,10 +36,10 @@ export default class Login extends Component {
                                 <Form 
                                     title="Bienvenido /a"
                                     btnReg="Iniciar Sesión"
+                                    active={false}
                                 />
                                 <div className="link">
                                     <p>¿ No tienes cuenta ? <a href="#" onClick={this.activeModal} >Regístrate aqui</a></p>
-                                    <Link to="/home">Home</Link>
                                 </div>
                             </div>
                             <div className="col-02">
@@ -54,6 +53,7 @@ export default class Login extends Component {
                                 btnReg="Crear Cuenta"
                                 btnBack="Volver al Login"
                                 divisor={true}
+                                active={true}
                             />      
                             <div className="link">
                                 <p>¿ Ya tienes cuenta ? <a href="#" onClick={this.activeModal}>Volver al Login</a></p>

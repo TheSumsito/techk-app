@@ -1,64 +1,41 @@
 import React, { Component } from 'react'
-import axios from "axios";
 import { Link } from "react-router-dom";
 
-export default class Films extends Component {
-    state = {
-        data: []
-    }
+import NotImg from "../assets/img/unnamed.png";
 
-    componentDidMount = () => {
-        axios.get('http://www.omdbapi.com/?s=batman&apikey=f9a88492')
-            .then((x) => {
-                this.setState({
-                    data: x.data.Search
-                })
-            })
-        
-    }
 
+
+export default class Films extends Component {    
     render() {
-        const data = this.state.data
-        if(data.length == 0) {
-            return (
-                <h1>Cargando ...</h1>
-            )
-        } else {
-            return (
-                <form className="cont-film">
-                    <div className="cont-search">
-                        <div className="title">
-                            <h1>Buscador de Peliculas</h1>
-                            <hr/>
-                        </div>
-                        <div className="search">
-                            <input 
-                                type="text"
-                                placeholder="Buscar Pelicula"
-                            />
-                            <button>
-                                Buscar
-                            </button>
-                        </div>
-                    </div>
-                    <div className="film">
-                        {
-                            this.state.data.map((film, i) => {
-                                return (
-                                    <div className="film-info">
-                                        <div className="image">
-                                            <Link key={i}><img src={film.Poster} /></Link>  
-                                        </div>
-                                        <div className="title">
-                                            <h3><Link key={i}>{film.Title}</Link></h3>
-                                        </div>
+        return (
+            <React.Fragment>
+            {
+                this.props.status ? (
+                    this.props.data.map(x => {
+                        return (
+                            <React.Fragment key={x.imdbID}>
+                                <Link className="link" to={'/detail/'+x.imdbID} className="film-info">
+                                    <div className="image">
+                                        {
+                                            x.Poster === 'N/A' ? (
+                                                <img src={NotImg} />
+                                            ) : (
+                                                <img src={x.Poster} />
+                                            )
+                                        }
                                     </div>
-                                )
-                            })
-                        }
-                    </div>
-                </form>
-            )
-        }
+                                    <div className="title">
+                                        <h3>{x.Title}</h3>
+                                    </div>
+                                </Link>
+                            </React.Fragment>
+                        )
+                    })
+                ) : (
+                    <h1>Busca tu Pelicula</h1>
+                )
+            }
+        </React.Fragment>
+        )
     }
 }

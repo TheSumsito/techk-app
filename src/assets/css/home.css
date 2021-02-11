@@ -90,19 +90,20 @@
 
 .container .cont-film .film .film-info {
     margin: 0px 10px 30px 10px;
+    text-decoration: none;
 }
+
 
 .container .cont-film .film .film-info img {
-    max-width: 100%;
-    border-radius: 20px;
     object-fit: cover;
-    height: auto;
+    width: 100%;
+    height: 17vw;
+    border-radius: 20px;
 }
 
-.container .cont-film .film .film-info .title h3 a {
+.container .cont-film .film .film-info .title h3 {
     color: var(--gray-hover);
     font-family: var(--font);
-    text-decoration: none;
 }
 
 
