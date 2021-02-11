@@ -49,3 +49,12 @@ axios.post('https://reqres.in/api/login', {
                             data={this.state.data}
                             status={this.state.status}
                         />
+
+
+ <Pagination 
+                                    activePage={this.state.activePage}
+                                    itemsCountPerPage={10}
+                                    totalItemsCount={parseInt(this.state.count)}
+                                    pageRangeDisplayed={5}
+                                    onChange={this.changePage.bind(this)}
+                                />
