@@ -14,7 +14,7 @@ export default class Films extends Component {
                     this.props.data.map(x => {
                         return (
                             <React.Fragment key={x.imdbID}>
-                                <Link className="link" to={'/detail/'+x.imdbID} className="film-info">
+                                <Link to={'/detail/'+x.imdbID} className="film-info">
                                     <div className="image">
                                         {
                                             x.Poster === 'N/A' ? (
@@ -32,7 +32,9 @@ export default class Films extends Component {
                         )
                     })
                 ) : (
-                    <h1>Busca tu Pelicula</h1>
+                    <div className="loading">
+                        <h1>Cargando ...</h1>
+                    </div>
                 )
             }
         </React.Fragment>

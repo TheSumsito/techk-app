@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
-import SimpleReactValidator from 'simple-react-validator';
+import swal from "sweetalert";
 
 export default class Form extends Component {
     state = {
@@ -31,11 +31,25 @@ export default class Form extends Component {
                 status: true,
                 token: res.data.token
             })
+            swal({
+                title: "Bienvenido Nuevamente !",
+                text: "Un gusto tenerte acá ! :')",
+                icon: "success",
+                buttons: "Cerrar",
+                className: "message"
+            });
         }).catch((err)=>{
             this.setState({
                 status: false,
                 error:err
             })
+            swal({
+                title: "Error",
+                text: "Usuario y/o Contraseña incorrecta",
+                icon: "warning",
+                buttons: "Cerrar",
+                className: "message"
+            });
         })   
     }
 
@@ -55,11 +69,19 @@ export default class Form extends Component {
                 status: true,
                 data: res.data
             })
+            swal({
+                title: "Bienvenido /a",
+                text: "Gracias por registrarte con nosotros",
+                icon: "success",
+                buttons: "Cerrar",
+                className: "message"
+            });
         }).catch((err)=>{
             this.setState({
                 status: false,
                 err: err
             })
+            
         })
     }
 
