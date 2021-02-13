@@ -11,7 +11,7 @@ export default class Films extends Component {
             <React.Fragment>
             {
                 this.props.status ? (
-                    this.props.data.map(x => {
+                    this.props.movies.map(x => {
                         return (
                             <React.Fragment key={x.imdbID}>
                                 <Link to={'/detail/'+x.imdbID} className="film-info">

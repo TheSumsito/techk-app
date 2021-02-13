@@ -20,7 +20,7 @@ export default class Detail extends Component {
     })
 
 
-    getDetailFilm = () => {
+    getDetailSearch = () => {
         var value = this.props.match.params.id
         axios.get('http://www.omdbapi.com/?i='+value+'&apikey='+this.state.key)
         .then(x=> {
@@ -33,7 +33,7 @@ export default class Detail extends Component {
 
 
     componentDidMount = () => {
-        this.getDetailFilm()
+        this.getDetailSearch()
     }
 
 
