@@ -28,7 +28,7 @@ export default class Home extends Component {
     constructor(props){
         super(props)
         this.state = {
-            activePageMovies: 1,
+            activePage: 1,
             key: 'f9a88492'
         }
     }
@@ -83,6 +83,7 @@ export default class Home extends Component {
             })
         })
     }
+
 
     getSearchFilter = (e) => {
         e.preventDefault()

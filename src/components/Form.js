@@ -2,23 +2,48 @@ import React, { Component } from 'react'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import swal from "sweetalert";
-
+import SimpleReactValidator from "simple-react-validator";
 export default class Form extends Component {
     state = {
         status: false,
         data: [],
         token: '',
-        error: ''
+        error: '',
+        validate: {}
     }
 
 
-    txtEmail = React.createRef()
-    txtPass = React.createRef()
+    emailRef = React.createRef()
+    passRef = React.createRef()
+
+    componentWillMount = () => {
+        this.validator = new SimpleReactValidator({
+            messages: {
+                required: 'Campo Requerido',
+                email: 'Correo Invalido'
+            }
+        })
+    }
+
+    getValidate = () => {
+        this.setState({
+            validate: {
+                email: this.emailRef.current.value,
+                pass: this.passRef.current.value
+            }
+        })
+
+        this.validator.showMessages()
+        this.forceUpdate();
+    }
+
+
 
     authenticate = () => {
-        var email = this.txtEmail.current.value
-        var password = this.txtPass.current.value
+        var email = this.emailRef.current.value
+        var password = this.passRef.current.value
 
+        this.getValidate()
         axios({
             method: 'POST',
             url: 'https://reqres.in/api/login',
@@ -31,31 +56,42 @@ export default class Form extends Component {
                 status: true,
                 token: res.data.token
             })
-            swal({
-                title: "Bienvenido Nuevamente !",
-                text: "Un gusto tenerte acá ! :')",
-                icon: "success",
-                buttons: "Cerrar",
-                className: "message"
-            });
+            {
+                this.validator.allValid() &&
+                    swal({
+                        title: "Bienvenido Nuevamente !",
+                        text: "Un gusto tenerte acá ! :')",
+                        icon: "success",
+                        buttons: "Cerrar",
+                        className: "message"
+                    });
+            }
         }).catch((err)=>{
             this.setState({
                 status: false,
                 error:err
             })
-            swal({
-                title: "Error",
-                text: "Usuario y/o Contraseña incorrecta",
-                icon: "warning",
-                buttons: "Cerrar",
-                className: "message"
-            });
+            {
+                this.validator.allValid() &&
+                    swal({
+                        title: "Error",
+                        text: "Usuario y/o Contraseña incorrecta",
+                        icon: "warning",
+                        buttons: "Cerrar",
+                        className: "message"
+                    });
+            }
         })   
     }
 
     createUser = () => {
-        var email = this.txtEmail.current.value
-        var password = this.txtPass.current.value
+        var email = this.emailRef.current.value
+        var password = this.passRef.current.value
+
+        console.log(email)
+
+
+        this.getValidate()        
 
         axios({
             method: 'POST',
@@ -69,13 +105,16 @@ export default class Form extends Component {
                 status: true,
                 data: res.data
             })
-            swal({
-                title: "Bienvenido /a",
-                text: "Gracias por registrarte con nosotros",
-                icon: "success",
-                buttons: "Cerrar",
-                className: "message"
-            });
+            {
+                this.validator.allValid() &&
+                    swal({
+                        title: "Bienvenido /a",
+                        text: "Gracias por registrarte con nosotros",
+                        icon: "success",
+                        buttons: "Cerrar",
+                        className: "message"
+                    });
+            }
         }).catch((err)=>{
             this.setState({
                 status: false,
@@ -95,13 +134,14 @@ export default class Form extends Component {
         )
     }
 
-
     render() {
         return (
             <React.Fragment>
                 {
-                    this.state.status &&
-                        <Redirect to={'/home'} />
+                    this.validator.allValid() &&
+                        this.state.status &&
+                            <Redirect to={'/home'} />
+
                 }
                 <form onSubmit={this.getTypeSubmit} autoComplete="off">
                     <div className="title">
@@ -111,18 +151,25 @@ export default class Form extends Component {
                         <input 
                             type="email" 
                             placeholder="E-mail" 
-                            ref={this.txtEmail}
+                            ref={this.emailRef}
                             name="txtEmail"
-                            required
+                            onChange={this.setState.title}
                         />
+                        {
+                            this.validator.message('txtEmail', this.state.validate.email , 'required')
+                        }
                     </div>
                     <div className="password">
                         <input
                             type="password" 
                             placeholder="Contraseña"
-                            ref={this.txtPass}
-                            required
+                            ref={this.passRef}
+                            name="txtPass"
+                            onChange={this.setState.pass}
                         />
+                        {
+                            this.validator.message('txtPass', this.state.validate.pass, 'required')
+                        }
                     </div>
                     {
                         this.props.divisor &&

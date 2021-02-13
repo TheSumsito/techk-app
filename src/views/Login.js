@@ -36,7 +36,7 @@ export default class Login extends Component {
                                 <Form 
                                     title="Bienvenido /a"
                                     btnReg="Iniciar Sesión"
-                                    active={false}
+                                    active={this.state.active}
                                 />
                                 <div className="link">
                                     <p>¿ No tienes cuenta ? <a href="#" onClick={this.activeModal} >Regístrate aqui</a></p>
