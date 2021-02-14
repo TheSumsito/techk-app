@@ -423,11 +423,15 @@ body {
     padding: 15px;
 }
 
-.container .cont-carousel .arrow-left,
-.container .cont-carousel .arrow-right {
-    color: white;
-    background-color: var(--brown);
-    padding: 15px;
+.container .cont-carousel .arrow-left:hover,
+.container .cont-carousel .arrow-right:hover {
+    background-color: white;
+    color: var(--brown);
+    font-weight: bold;
+    transition: .3s ease;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
 }
 /*! -------  FILM'S ------- */
 /*! ----------------------- */
