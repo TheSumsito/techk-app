@@ -112,7 +112,7 @@ export default class Home extends Component {
                 {/* COMPONENTS : HEADER, SERIES */}
                 <Header />
                 <Series />
-                <form className="cont-film animate__animated animate__bounceInRight" onChange={this.getSearchFilter}>
+                <form className="cont-film " onChange={this.getSearchFilter}>
                     <div className="cont-search">
                         <div className="title">
                             <h1>Buscador de Peliculas</h1>
