@@ -1,9 +1,12 @@
+// * DEPENDENCIES
 import React, { Component } from 'react'
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import swal from "sweetalert";
 import SimpleReactValidator from "simple-react-validator";
+
 export default class Form extends Component {
+    // * DECLARACION DE VARIABLES
     state = {
         status: false,
         data: [],
@@ -12,19 +15,25 @@ export default class Form extends Component {
         validate: {}
     }
 
+    // * INICIALIZADOR DE VARIABLES
+    constructor(props) {
+        super(props)
+        this.emailRef = React.createRef()
+        this.passRef = React.createRef()    
+    }
 
-    emailRef = React.createRef()
-    passRef = React.createRef()
-
+    // * VALIDATION'S
     componentWillMount = () => {
         this.validator = new SimpleReactValidator({
             messages: {
                 required: 'Campo Requerido',
-                email: 'Correo Invalido'
+                email: 'Correo Invalido',
+                alpha_num: 'Formato Erroneo'
             }
         })
     }
 
+    // * FUNCION DE VALIDACION DE CAMPOS Y ENVIO DE ALERTAS.
     getValidate = () => {
         this.setState({
             validate: {
@@ -37,8 +46,7 @@ export default class Form extends Component {
         this.forceUpdate();
     }
 
-
-
+    // * LOGIN AUTHENTICATE
     authenticate = () => {
         var email = this.emailRef.current.value
         var password = this.passRef.current.value
@@ -52,16 +60,27 @@ export default class Form extends Component {
                 password: password
             }
         }).then((res)=>{
-            this.setState({
-                status: true,
-                token: res.data.token
-            })
-            {
+            if(password === "cityslicka"){
+                this.setState({
+                    status: true,
+                    token: res.data.token
+                })
+                {
+                    this.validator.allValid() &&
+                        swal({
+                            title: "Bienvenido Nuevamente !",
+                            text: "Un gusto tenerte acá ! :')",
+                            icon: "success",
+                            buttons: "Cerrar",
+                            className: "message"
+                        });
+                }
+            } else {
                 this.validator.allValid() &&
                     swal({
-                        title: "Bienvenido Nuevamente !",
-                        text: "Un gusto tenerte acá ! :')",
-                        icon: "success",
+                        title: "Advertencia",
+                        text: "La contraseña ingresada no es Correcta",
+                        icon: "warning",
                         buttons: "Cerrar",
                         className: "message"
                     });
@@ -84,6 +103,7 @@ export default class Form extends Component {
         })   
     }
 
+    // * CREACION DE USUARIO
     createUser = () => {
         var email = this.emailRef.current.value
         var password = this.passRef.current.value
@@ -125,11 +145,14 @@ export default class Form extends Component {
     }
 
 
+    // ? SE LLAMA A UNA ACCION DEPENDIENDO DEL ESTADO
     getTypeSubmit = (e) => {
         e.preventDefault()
         !this.props.active ? (
+            // * LOGIN
             this.authenticate()
         ) : (
+            // * CREACION DE USUARIO
             this.createUser()
         )
     }
@@ -138,6 +161,7 @@ export default class Form extends Component {
         return (
             <React.Fragment>
                 {
+                    // ? ACTIVAR VALIDACION
                     this.validator.allValid() &&
                         this.state.status &&
                             <Redirect to={'/home'} />
@@ -155,9 +179,12 @@ export default class Form extends Component {
                             name="txtEmail"
                             onChange={this.setState.title}
                         />
-                        {
-                            this.validator.message('txtEmail', this.state.validate.email , 'required')
-                        }
+                        {/* MENSAJE VALIDACION */}
+                        <p>
+                            {
+                                this.validator.message('txtEmail', this.state.validate.email , 'required|email')
+                            }
+                        </p>
                     </div>
                     <div className="password">
                         <input
@@ -167,11 +194,15 @@ export default class Form extends Component {
                             name="txtPass"
                             onChange={this.setState.pass}
                         />
-                        {
-                            this.validator.message('txtPass', this.state.validate.pass, 'required')
-                        }
+                        {/* MENSAJE VALIDACION */}
+                        <p>
+                            {
+                                this.validator.message('txtPass', this.state.validate.pass, 'required|alpha_num')
+                            }
+                        </p>
                     </div>
                     {
+                        // * HR (REGISTRO)
                         this.props.divisor &&
                             <hr />
                     }

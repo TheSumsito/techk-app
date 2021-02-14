@@ -1,9 +1,9 @@
+// * DEPENDENCIES
 import React, { Component } from 'react'
 import { Link } from "react-router-dom";
 
+// * ASSETS
 import NotImg from "../assets/img/unnamed.png";
-
-
 
 export default class Films extends Component {    
     render() {
@@ -11,6 +11,7 @@ export default class Films extends Component {
             <React.Fragment>
             {
                 this.props.status ? (
+                    // * LISTADO DE PELICULAS (TITLE - POSTER)
                     this.props.movies.map(x => {
                         return (
                             <React.Fragment key={x.imdbID}>
@@ -32,6 +33,7 @@ export default class Films extends Component {
                         )
                     })
                 ) : (
+                    // * MENSAJE CARGANDO
                     <div className="loading">
                         <h1>Cargando ...</h1>
                     </div>

@@ -1,25 +1,24 @@
+// * DEPENDENCIES
 import React, { Component } from 'react'
 import axios from "axios";
 import { Link } from "react-router-dom";
 
+import NotFound from "../assets/img/unnamed.png";
 
-//ASSETS
-import '../assets/css/detail.css'
-import NotImg from "../assets/img/unnamed.png";
-
-//COMPONENTS
+// * COMPONENTS
 import Header from "../components/Header";
 
 
 export default class Detail extends Component {
 
+    // * DECLARACION DE VARIABLES
     state = ({
         key: 'f9a88492',
         detail: [],
         status: false
     })
 
-
+    // * OBTIENE EL DETALLE DEL OBJETO (MOVIES - SERIES)
     getDetailSearch = () => {
         var value = this.props.match.params.id
         axios.get('http://www.omdbapi.com/?i='+value+'&apikey='+this.state.key)
@@ -31,7 +30,7 @@ export default class Detail extends Component {
         })
     }
 
-
+    // * INICIALIZACION DEL DETALLE (SERIE - MOVIE)
     componentDidMount = () => {
         this.getDetailSearch()
     }
@@ -41,15 +40,17 @@ export default class Detail extends Component {
     render() {
         return (
             <div className="container">
+                {/* COMPONENT: HEADER */}
                 <Header />
                 <div className="cont-detail">
                     {
                         this.state.status ? (
+                            // * DETALLE (SERIE - MOVIE)
                             <React.Fragment>
                                 <div className="image">
                                     {
                                         this.state.detail.Poster === 'N/A' ? (
-                                            <img src={NotImg} />
+                                            <img src={NotFound} />
                                         ) : (
                                             <img src={this.state.detail.Poster} />
                                         )
@@ -77,12 +78,14 @@ export default class Detail extends Component {
                                 </div>
                             </React.Fragment>
                         ) : (
+                            // * MENSAJE DE CARGA
                             <div className="cont-loading">
                                 <h1>Loading</h1>
                             </div>
                         )
                     }
                 </div>
+                {/* BOTON VOLVER */}
                 <div className="btn-volver">
                     <Link to={'/home'}><h2>Volver</h2></Link>
                 </div>

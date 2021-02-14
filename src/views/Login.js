@@ -1,10 +1,7 @@
+// * DEPENDENCIES
 import React, { Component } from 'react'
 
-//Assets
-import "../assets/css/login.css";
-import "../assets/css/responsive/login.css"
-
-//Componentes
+// * COMPONENTS
 import Form from "../components/Form";
 import Intro from "../components/Intro";
 
@@ -14,12 +11,15 @@ export default class Login extends Component {
         active: false
     }
 
+    // ? SE LLAMA DEPENDIENDO DEL ESTADO
     activeModal = () => {
         !this.state.active ? (
+            //* ACTIVA MODAL REGISTRAR
             this.setState({
                 active: true
             })
         ) : (
+            //* ACTIVA LOGIN AUTHENTICATE
             this.setState({
                 active: false
             })
@@ -34,21 +34,25 @@ export default class Login extends Component {
                     !this.state.active ? (
                         <React.Fragment>
                             <div className="cont-login">
+                                {/* COMPONENT: FORM (LOGIN) */}
                                 <Form 
                                     title="Bienvenido /a"
                                     btnReg="Iniciar Sesión"
-                                    active={this.state.active}
+                                    active={false}
                                 />
+                                {/* LINK */}
                                 <div className="link">
                                     <p>¿ No tienes cuenta ? <a href="#" onClick={this.activeModal} >Regístrate aqui</a></p>
                                 </div>
                             </div>
+                            {/* COMPONENT: INTRO */}
                             <div className="col-02">
                                 <Intro />
                             </div>
                         </React.Fragment>
                     ) : (
                         <div className="cont-register">
+                            {/* COMPONENT: FORM (REGISTER) */}
                             <Form 
                                 title="Registrarse"
                                 btnReg="Crear Cuenta"
@@ -56,6 +60,7 @@ export default class Login extends Component {
                                 divisor={true}
                                 active={true}
                             />      
+                            {/* LINK */}
                             <div className="link">
                                 <p>¿ Ya tienes cuenta ? <a href="#" onClick={this.activeModal}>Volver al Login</a></p>
                             </div>

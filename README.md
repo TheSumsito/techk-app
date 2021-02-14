@@ -1,3 +1,7 @@
+# ------------ NOTE ------------------------
+Run this code in your terminal to reinstall dependencies and enjoy this service-
+- npm install
+
 
 # -------------------- Apis Worked -------------------------
 # Authenticate and Register
@@ -41,7 +45,7 @@ npm install --save sweetalert
 It is used to send alert messages, both in the user registration and in the authenticated login
 
 
-# ---------------------- Description of Application -----------------------
+# -------------- Description of Application -----------------
 Project that will describe the origins of your favorite movies.
 
 This application will search a list of movies just by having a reference of the movie to look for and it will also show you some series recommended by us.
@@ -50,10 +54,10 @@ This application will search a list of movies just by having a reference of the 
 I would like to highlight that this application is 100% responsive through the use of MediaQuery's
 
 
-# ------------ NOTE ------------------------
-Run this code in your terminal and enjoy this service
+# ------------ NOTE!!!!! ------------------------
+# VALIDATIONS !!!!
+EMAIL: RESCUED FROM THE API REQRES OF REGISTERED USERS: https://reqres.in
+PASSWORD: cityslicka
+# PD: HOW IS A TESTING API THE PASSWORD IS USED FOR ANY USER REGISTERED IN THE API
 
-- npm install
-
-
-THANKS
+THANKS :)

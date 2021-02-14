@@ -1,0 +1,702 @@
+/* ! ------- IMPORT FONT (FIRA SANS) ------- */
+/* !-------------------------- */
+@import 'https://fonts.googleapis.com/css2?family=Fira+Sans&family=Poppins:wght@100;300&display=swap';
+
+
+/* ! ------- VARIABLES ------- */
+/* !-------------------------- */
+:root {
+    --brown: #723E0B;
+    --brown-dark: #311F0E;
+    --brown-hover: #201204;
+    --font: 'Fira Sans';
+}
+
+/* ! ------ BODY --------- */
+/* !---------------------- */
+body {
+    background-image: url('../img/01.jpg');
+}
+
+
+/* ! ------ GENERAL --------- */
+/* !------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+
+
+/* ! ------------------------------------- HEADER MENU ------------------------------------ */
+/* !--------------------------------------------------------------------------------------- */
+/* ! ------ HEADER MENU --------- */
+/* !----------------------------- */
+.container .cont-menu {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--brown);
+    border-bottom: 3px solid var(--brown-dark);
+}
+
+.container .cont-menu .menu {
+    grid-column: 2/8;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 30px 0px 30px 0px;
+    text-align: center;
+}
+
+.container .cont-menu .menu .home {
+    grid-column: 1/3;
+}
+
+.container .cont-menu .menu .logout {
+    grid-column: 5/-1;
+}
+
+.container .cont-menu .menu .home,
+.container .cont-menu .menu .logout {
+    display: inline;
+    text-decoration: none;
+}
+
+.container .cont-menu .menu .home a {
+    text-decoration: none;
+    background-color: var(--brown-dark);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-family: var(--font);
+    font-size: 18px;
+}
+
+.container .cont-menu .menu .home a:hover {
+    background-color: white;
+    color: var(--brown);
+    font-weight: bold;
+    transition: .3s ease;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+}
+
+.container .cont-menu .menu .logout a  {
+    text-decoration: none;
+    color: var(--brown-hover);
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.container .cont-menu .menu .logout a:hover {
+    color: white;
+    transition: .3s ease;
+    font-weight: normal;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+}
+
+
+
+
+
+/* ! ------------------------------------- ROUTE: LOGIN ----------------------------------- */
+/* !--------------------------------------------------------------------------------------- */
+/* ! ------ LOGIN --------- */
+/* !----------------------- */
+.container .cont-login {
+    grid-column: 2/5;
+    text-align: center;
+    border-radius: 0px 0px 60px 60px;
+    background-color: var(--brown);
+    border-bottom: 45px solid var(--brown-dark);
+    border-top: 20px solid var(--brown-dark);
+    padding: 60px 0px 80px 0px;
+}
+
+.container .cont-login .title {
+    margin: 0px 0px 50px 0px;
+}
+
+.container .cont-login .title h1 {
+    color: white;
+    text-shadow: 4px 4px var(--brown-dark);
+    font-size: 45px;
+    font-family: var(--font);
+    font-weight: bold;
+}
+
+.container .cont-login .email {
+    margin: 0px 0px 20px 0px;
+}
+
+.container .cont-login .password {
+    margin: 0px 0px 40px 0px;
+}
+
+.container .cont-login .email input,
+.container .cont-login .password input {
+    width: 220px;
+    height: 30px;
+    text-align: center;
+    font-family: var(--font);
+    border-bottom: 4px solid var(--brown-dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+    outline: none;
+}
+
+.container .cont-login .email p,
+.container .cont-login .password p {
+    font-family: var(--font);
+}
+
+.container .cont-login .button {
+    margin: 0px 0px 40px 0px;
+}
+
+.container .cont-login .button button {
+    padding: 8px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid var(--brown-dark);
+    font-family: var(--font);
+    font-size: 15px;
+    color: var(--brown-dark);
+    outline: none;
+}
+
+.container .cont-login .button button:hover {
+    color: white;
+    background-color: var(--brown-dark);
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.container .cont-login .link p {
+    color: white;
+    font-family: var(--font);
+}
+
+.container .cont-login .link a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--brown-dark);
+}
+
+.container .cont-login .link a:hover {
+    color: var(--brown-hover);
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -o-transition: .2s ease;
+}
+/* ! ------ DESCRIPTION LOGIN --------- */
+/* !----------------------------------- */
+.container .col-02 {
+    grid-column: 6/9;
+    background-color: var(--brown);
+    margin: 230px 0px 0px 0px;
+    text-align: center;
+    border-radius: 20px 20px 60px 60px;
+    height: 45%;
+    border-bottom: 40px solid var(--brown-dark);
+}
+
+.container .col-02 .title {
+    margin: 50px 0px 0px 0px;
+}
+
+.container .col-02 .title h1 {
+    color: white;
+    text-shadow: 4px 4px var(--brown-dark);
+    font-size: 35px;
+    font-family: var(--font);
+}
+
+.container .col-02 .text {
+    margin: 60px 0px 50px 0px;
+}
+
+.container .col-02 .text p {
+    color: white;
+    font-family: var(--font);
+    font-size: 20px;
+}
+/* ! ------ REGISTER --------- */
+/* !-------------------------- */
+.container .cont-register {
+    grid-column: 4/7;
+    text-align: center;
+    background-color: var(--brown);
+    margin-top: 35%;
+    border-radius: 40px 40px 60px 60px;
+    border-bottom: 40px solid var(--brown-dark);
+    border-top: 20px solid var(--brown-dark);
+}
+
+.container .cont-register .title {
+    margin: 20px 0px 30px 0px;
+}
+
+
+.container .cont-register .title h1 {
+    color: white;
+    text-shadow: 4px 4px var(--brown-dark);
+    font-size: 45px;
+    font-family: var(--font);
+}
+
+.container .cont-register .email {
+    margin: 0px 0px 20px 0px;
+}
+
+.container .cont-register .password {
+    margin: 0px 0px 20px 0px;
+}
+
+.container .cont-register .email input,
+.container .cont-register .password input {
+    width: 220px;
+    height: 30px;
+    text-align: center;
+    font-family: var(--font);
+    border-bottom: 4px solid var(--brown-dark);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 15px;
+}
+
+.container .cont-register hr {
+    border: 2px solid var(--brown-hover);
+    text-align: center;
+    position: relative;
+    top: 5spx;
+    margin: 0px 100px 0px 100px;
+}
+
+
+.container .cont-register .button {
+    margin: 20px 0px 20px 0px;
+}
+
+.container .cont-register .button button {
+    padding: 8px 10px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 2px solid var(--brown-dark);
+    font-family: var(--font);
+    font-size: 15px;
+    color: var(--brown-dark);
+    outline: none;
+}
+
+.container .cont-register .button button:hover {
+    color: white;
+    background-color: var(--brown-dark);
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.container .cont-register .link {
+    margin: 0px 0px 30px 0px;
+}
+
+.container .cont-register .link p {
+    color: white;
+    font-family: var(--font);
+}
+
+.container .cont-register .link a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--brown-dark);
+}
+
+.container .cont-register .link a:hover {
+    color: var(--brown-hover);
+    transition: .2s ease;
+    -webkit-transition: .2s ease;
+    -moz-transition: .2s ease;
+    -o-transition: .2s ease;
+}
+/* ! ------ VALIDATE --------- */
+/* !-------------------------- */
+.password p,
+.email p {
+    font-family: var(--font);
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--brown-dark);
+    margin: 5px 0px 0px 0px;
+}
+
+
+/* ! ------------------------------------- ROUTE: HOME ----------------------------------- */
+/* !--------------------------------------------------------------------------------------- */
+/*! -------  HOME ------- */
+/*! --------------------- */
+
+/*! -------  CAROUSEL ------- */
+/*! ------------------------- */
+.container .cont-carousel {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    text-align: center;
+    margin: 40px 40px 0px 40px;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 30px;
+    border: 2px solid var(--brown);
+    padding: 20px 0px 30px 0px;
+
+}
+
+.container .cont-carousel .title {
+    grid-column: 1/-1;
+    text-align: center;
+    margin: 0px 0px 60px 0px;
+    font-size: 25px;
+}
+
+.container .cont-carousel .title h1 {
+    color: white;
+    font-family: var(--font);
+    text-shadow: 2.5px 2.5px var(--brown);
+
+}
+
+.container .cont-carousel .cont-image {
+    grid-column: 1/-1;
+}
+
+.container .cont-carousel .image {
+    grid-column: 1/-1;
+    text-align: center;
+    border-radius: 20px;
+    background-color: var(--brown);
+}
+
+.container .cont-carousel .image img {
+    max-width: 100%;
+    height: 17vw;
+    margin: auto;
+    display: inline;
+    border-radius: 20px;
+}
+
+.container .cont-carousel .image img:hover {
+    opacity: .6;
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.container .cont-carousel .arrow-left,
+.container .cont-carousel .arrow-right {
+    color: white;
+    background-color: var(--brown);
+    padding: 15px;
+}
+/*! -------  FILM'S ------- */
+/*! ----------------------- */
+.container .cont-film {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    background-color: var(--brown);
+    border-radius: 30px 30px 30px 30px;
+    border-top: 20px solid var(--brown-dark);
+    border-bottom: 20px solid var(--brown-dark);
+    margin: 40px;
+}
+
+
+.container .cont-film .cont-search {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.container .cont-film .cont-search .title {
+    grid-column: 1/-1;
+    text-align: center;
+    margin: 20px 0px 0px 0px;
+}
+
+.container .cont-film .cont-search .title h1 {
+    color: white;
+    text-shadow: 2.5px 2.5px var(--brown-hover);
+    font-family: var(--font);
+    font-size: 45px;
+}
+
+.container .cont-film .cont-search .divider {
+    border: 2px solid var(--brown-hover);
+    text-align: center;
+    grid-column: 3/6;
+    position: relative;
+    top: 20px;
+}
+
+.container .cont-film .cont-search .search {
+    grid-column: 1/-1;
+    text-align: center;
+    margin: 40px 0px 10px 0px;
+}
+
+.container .cont-film .cont-search .search input {
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    font-family: var(--font);
+    border: none;
+    border-bottom: 4px solid var(--brown-hover);
+    margin-right: 10px;
+    outline: none;
+    font-size: 18px;
+}
+
+.container .cont-film .cont-search .search button {
+    padding: 7px 14px;
+    font-weight: bold;
+    border-radius: 7px;
+    border: 2px solid var(--brown-dark);
+    font-family: var(--font);
+    font-size: 15px;
+    color: var(--brown-dark);
+    outline: none;
+}
+
+.container .cont-film .cont-search .search button:hover {
+    color: white;
+    background-color: var(--brown-dark);
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.container .cont-film .film {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    padding: 50px 50px 0px 50px;
+}
+
+.container .cont-film .film .film-info {
+    margin: 0px 10px 30px 10px;
+    text-decoration: none;
+}
+
+.container .cont-film .film .film-info .image {
+    background-color: var(--brown-dark);
+    border-radius: 20px;
+}
+
+
+.container .cont-film .film .film-info .image img {
+    object-fit: cover;
+    width: 100%;
+    height: 17vw;
+    border-radius: 20px;
+}
+
+.container .cont-film .film .film-info .image img:hover {
+    opacity: .6;
+    transition: .4s ease;
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    -o-transition: .4s ease;
+}
+
+.container .cont-film .film .film-info .title {
+    margin: 15px 0px 0px 0px;
+}
+
+.container .cont-film .film .film-info .title h3 {
+    color: var(--brown-hover);
+    font-family: var(--font);
+    font-size: 20px;
+}
+/*! -------  FILMS'S PAGINATE ------- */
+/*! --------------------------------- */
+.container .cont-film .paginate {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 0px 0px 30px 0px;
+    margin: 50px 0px 20px 0px;
+}
+
+.container .cont-film .paginate .page-item {
+    text-decoration: none;
+    list-style: none;
+    display: inline;
+}
+
+.container .cont-film .paginate .page-link {
+    text-decoration: none;
+    font-family: var(--font);
+    color: var(--brown-hover);
+    margin: 0px 5px 0px 5px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid var(--brown-dark);
+    padding: 10px;
+}
+
+.container .cont-film .paginate .active {
+    color: white;
+    background-color: var(--brown-hover);
+}
+
+.container .cont-film .paginate .page-link:hover {
+    color: var(--brown-dark);
+}
+/*! -------  FILMS LOADING ------- */
+/*! ------------------------------ */
+.container .cont-film .film .loading {
+    grid-column: 1/-1;
+    margin: 0px 0px 30px 0px;
+}
+
+.container .cont-film .film .loading h1 {
+    color: rebeccapurple;
+    font-family: var(--font);
+    color: var(--brown-hover);
+    font-size: 40px;
+}
+
+
+
+
+/* ! ------------------------------------- ROUTE: DETAIL ----------------------------------- */
+/* !--------------------------------------------------------------------------------------- */
+/* ! ------ INFO (SERIE - MOVIE) --------- */
+/* !-------------------------------------- */
+.container .cont-detail {
+    grid-column: 2/9;
+    background-color: var(--brown);
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    margin-top: 50px;
+    border-radius: 40px 40px 40px 40px;
+    border-left: 10px solid var(--brown-dark);
+    border-right: 10px solid var(--brown-dark);
+}
+
+.container .cont-detail .image {
+    grid-column: 1/4;
+    padding: 10px;
+}
+
+.container .cont-detail .image img {
+    max-width: 100%;
+    height: 30vw;
+    border-radius: 40px;
+    border-right: 15px solid var(--brown-dark);
+}
+
+.container .cont-detail .detail {
+    grid-column: 4/-1;
+    margin: auto;
+    padding: 30px;
+}
+
+
+.container .cont-detail .detail .title,
+.container .cont-detail .detail .years,
+.container .cont-detail .detail .gender,
+.container .cont-detail .detail .language,
+.container .cont-detail .detail .actor,
+.container .cont-detail .detail .country {
+    margin: 20px;
+}
+
+
+
+.container .cont-detail .detail .title h2,
+.container .cont-detail .detail .years h2,
+.container .cont-detail .detail .gender h2,
+.container .cont-detail .detail .language h2,
+.container .cont-detail .detail .actor h2,
+.container .cont-detail .detail .country h2 {
+    font-family: var(--font);
+    color: white;
+    text-shadow: 2px 2px var(--brown-hover)
+}
+
+
+
+.container .cont-detail .detail .title h2 span,
+.container .cont-detail .detail .years h2 span,
+.container .cont-detail .detail .gender h2 span,
+.container .cont-detail .detail .language h2 span,
+.container .cont-detail .detail .actor h2 span,
+.container .cont-detail .detail .country h2 span {
+    color: var(--brown-hover);
+    text-shadow: none;
+}
+
+
+.container .btn-volver {
+    grid-column: 8/9;
+    text-align: center;
+    margin: 10px 10px 0px 0px;
+}
+
+.container .btn-volver a {
+    text-decoration: none;
+}
+
+.container .btn-volver h2 {
+    color: white;
+    font-family: var(--font);
+    font-size: 25px;
+    text-shadow: 2px 2px var(--brown-hover);
+    background-color: var(--brown);
+    border-radius: 15px;
+    padding: 7px 20px;
+    border-bottom: 5px solid var(--brown-dark);
+}
+
+.container .btn-volver h2:hover {
+    background-color: white;
+    color: var(--brown-dark);
+    text-shadow: none;
+    font-weight: bold;
+    transition: .3s ease;
+    -webkit-transition: .3s ease;
+    -moz-transition: .3s ease;
+    -o-transition: .3s ease;
+}
+/* ! ------ MENSAJE LOADING (DETAIL) --------- */
+/* !------------------------------------------ */
+.container .cont-detail .cont-loading {
+    grid-column: 1/-1;
+    text-align: center;
+    margin: 215px;
+}
+
+.container .cont-detail .cont-loading h1 {
+    font-family: var(--font);
+    color: var(--brown-hover);
+}

@@ -1,10 +1,9 @@
+// * DEPENDENCIES
 import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Detail from './views/Detail';
 import Home from './views/Home';
 import Login from './views/Login';
-
-
 
 export default class Router extends Component {
     render() {

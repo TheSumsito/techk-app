@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import Router from "./Router";
 
 //ASSETS GLOBAL
-import "../src/assets/css/header.css";
+import "../src/assets/css/styles.css";
+import "../src/assets/css/responsive.css"
 
 export default class Login extends Component {
     

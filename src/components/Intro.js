@@ -1,3 +1,4 @@
+// * DEPENDENCIES
 import React, { Component } from 'react'
 
 //Buscador de peliculas, ven y conoce los detalles de tus peliculas favoritas

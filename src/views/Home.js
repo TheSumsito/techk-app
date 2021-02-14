@@ -1,18 +1,16 @@
+// * DEPENDENCIES
 import React, { Component } from 'react'
 import axios from "axios";
 import Pagination from 'react-js-pagination';
 
-//styles
-import "../assets/css/home.css"
-
-//Components
+// * COMPONENTS
 import Header from "../components/Header";
 import Films from "../components/Films";
 import Series from "../components/Series";
 
 
 export default class Home extends Component {
-    //Estado de variables
+    //* STATE - VARIABLES
     state = {
         //? VAR MOVIES
         key: '',
@@ -24,17 +22,18 @@ export default class Home extends Component {
         err: []
     }
 
-    //Inicializa las variables asignadas (paginate)
+    //* INICIALIZACION DE VARIABLES
     constructor(props){
         super(props)
         this.state = {
             activePage: 1,
-            key: 'f9a88492'
+            key: 'f9a88492',
         }
+        this.searchRef = React.createRef()
     }
 
-    searchRef = React.createRef()
 
+    // * BUSCADOR DE PELICULAS
     getSearchMovies = (req) => {
         if(req === ''){
             req = 'man'
@@ -61,6 +60,7 @@ export default class Home extends Component {
         })
     }
 
+    // * ACCION PAGINATE DE PELICULAS
     changePageMovies = (pageNumber) =>{
         const value = this.searchRef.current.value
         axios({
@@ -84,13 +84,14 @@ export default class Home extends Component {
         })
     }
 
-
+    // * FILTRA POR VALOR DEL INPUT
     getSearchFilter = (e) => {
         e.preventDefault()
         const values = this.searchRef.current.value
         this.getSearchMovies(values)
     }
 
+    //* BUSQUEDA PRINCIPAL (SIN PAGINATE)
     componentDidMount() {
         axios({
             method: 'POST',
@@ -108,6 +109,7 @@ export default class Home extends Component {
     render() {
         return (
             <div className="container">
+                {/* COMPONENTS : HEADER, SERIES */}
                 <Header />
                 <Series />
                 <form className="cont-film" onChange={this.getSearchFilter}>
@@ -125,6 +127,7 @@ export default class Home extends Component {
                         </div>
                     </div>
                     <div className="film">
+                        {/* COMPONENT: FILMS */}
                         <Films
                             status={this.state.status}
                             movies={this.state.movies}
@@ -133,6 +136,7 @@ export default class Home extends Component {
                     {
                         this.state.paginate &&
                             <div className="paginate">
+                                {/* PAGINATION */}
                                 <Pagination 
                                     activePage={this.state.activePage}
                                     itemsCountPerPage={10}
