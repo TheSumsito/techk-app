@@ -422,6 +422,13 @@ body {
     background-color: var(--brown);
     padding: 15px;
 }
+
+.container .cont-carousel .arrow-left,
+.container .cont-carousel .arrow-right {
+    color: white;
+    background-color: var(--brown);
+    padding: 15px;
+}
 /*! -------  FILM'S ------- */
 /*! ----------------------- */
 .container .cont-film {
