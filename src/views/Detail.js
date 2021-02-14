@@ -42,7 +42,7 @@ export default class Detail extends Component {
             <div className="container">
                 {/* COMPONENT: HEADER */}
                 <Header />
-                <div className="cont-detail">
+                <div className="cont-detail animate__animated animate__bounceIn">
                     {
                         this.state.status ? (
                             // * DETALLE (SERIE - MOVIE)
@@ -86,7 +86,7 @@ export default class Detail extends Component {
                     }
                 </div>
                 {/* BOTON VOLVER */}
-                <div className="btn-volver">
+                <div className="btn-volver animate__animated animate__bounceIn">
                     <Link to={'/home'}><h2>Volver</h2></Link>
                 </div>
             </div>

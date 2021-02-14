@@ -44,7 +44,7 @@ export default class Series extends Component {
             <React.Fragment>
                 {
                     this.state.status &&
-                        <div className="cont-carousel">
+                        <div className="cont-carousel animate__animated animate__bounceInLeft">
                             <div className="title">
                                 <h1>Series Recomendadas</h1>
                             </div>

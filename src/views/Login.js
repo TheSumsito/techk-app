@@ -51,7 +51,7 @@ export default class Login extends Component {
                             </div>
                         </React.Fragment>
                     ) : (
-                        <div className="cont-register">
+                        <div className="cont-register animate__animated animate__bounceInDown">
                             {/* COMPONENT: FORM (REGISTER) */}
                             <Form 
                                 title="Registrarse"

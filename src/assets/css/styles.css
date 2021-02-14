@@ -700,7 +700,7 @@ body {
 .container .cont-detail .cont-loading {
     grid-column: 1/-1;
     text-align: center;
-    margin: 215px;
+    margin: 215px 0px 215px 0px;
 }
 
 .container .cont-detail .cont-loading h1 {
