@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 //Assets
 import "../assets/css/login.css";
+import "../assets/css/responsive/login.css"
 
 //Componentes
 import Form from "../components/Form";

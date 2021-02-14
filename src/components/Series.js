@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import "react-alice-carousel/lib/alice-carousel.css";
-import { Link } from "react-router-dom";
 import axios from "axios";
-import Carousel from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
 
 
+//Imports
+import MQuery from "./MQuery";
 
 export default class Series extends Component {
     state = {
@@ -50,23 +49,10 @@ export default class Series extends Component {
                                 <h1>Series Recomendadas</h1>
                             </div>
                             <div className="cont-image">
-                                <Carousel
-                                    arrows
-                                    slidesPerPage={5}
-                                    slidesPerScroll={1}
-                                    infinite>
-                                    {
-                                        this.state.status &&
-                                            this.state.series.map(x=>{
-                                                return (
-                                                    <Link to={'/detail/'+x.imdbID} className="image">
-                                                        <img src={x.Poster} />
-                                                    </Link>
-                                                )
-                                                
-                                            })
-                                    }
-                                </Carousel>
+                                <MQuery
+                                    status={this.state.status}
+                                    series={this.state.series}
+                                />
                             </div>
                         </React.Fragment>
                 }

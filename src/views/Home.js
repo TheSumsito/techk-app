@@ -137,7 +137,7 @@ export default class Home extends Component {
                                     activePage={this.state.activePage}
                                     itemsCountPerPage={10}
                                     totalItemsCount={parseInt(this.state.count)}
-                                    pageRangeDisplayed={5}
+                                    pageRangeDisplayed={3}
                                     itemClass="page-item"
                                     linkClass="page-link"   
                                     activeLinkClass="active"

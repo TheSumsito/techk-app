@@ -2,24 +2,24 @@
     grid-column: 1/-1;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-}
-
-.container .cont-menu .menu {
-    grid-column: 1/-1;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
     background-color: var(--gray);
-    padding: 30px;
-    text-align: center;
     border-bottom: 3px solid var(--gray-dark);
 }
 
+.container .cont-menu .menu {
+    grid-column: 2/8;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    padding: 30px 0px 30px 0px;
+    text-align: center;
+}
+
 .container .cont-menu .menu .home {
-    grid-column: 2/3;
+    grid-column: 1/3;
 }
 
 .container .cont-menu .menu .logout {
-    grid-column: 6/7;
+    grid-column: 5/-1;
 }
 
 .container .cont-menu .menu .home,
