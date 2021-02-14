@@ -1,6 +1,13 @@
 # ------------ NOTE ------------------------
 Run this code in your terminal to reinstall dependencies and enjoy this service-
 - npm install
+# VALIDATIONS !!!!
+EMAIL: RESCUED FROM THE API REQRES OF REGISTERED USERS: https://reqres.in
+PASSWORD: cityslicka
+# PD: HOW IS A TESTING API THE PASSWORD IS USED FOR ANY USER REGISTERED IN THE API
+
+THANKS :)
+
 
 
 # -------------------- Apis Worked -------------------------
@@ -52,12 +59,3 @@ This application will search a list of movies just by having a reference of the 
 
 
 I would like to highlight that this application is 100% responsive through the use of MediaQuery's
-
-
-# ------------ NOTE!!!!! ------------------------
-# VALIDATIONS !!!!
-EMAIL: RESCUED FROM THE API REQRES OF REGISTERED USERS: https://reqres.in
-PASSWORD: cityslicka
-# PD: HOW IS A TESTING API THE PASSWORD IS USED FOR ANY USER REGISTERED IN THE API
-
-THANKS :)

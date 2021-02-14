@@ -4,6 +4,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Detail from './views/Detail';
 import Home from './views/Home';
 import Login from './views/Login';
+import NotFound from './views/NotFound';
 
 export default class Router extends Component {
     render() {
@@ -13,6 +14,7 @@ export default class Router extends Component {
                     <Route exact path="/" component={Login} />
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/detail/:id" component={Detail} />
+                    <Route component={NotFound}/>
                 </Switch>
             </BrowserRouter>
         )

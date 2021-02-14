@@ -203,21 +203,11 @@
 
 @media (min-width: 481px) and (max-width: 767px) {
     /*! --------------------------------- LOGIN --------------------------- */ 
-
-    
     /*! --------- MENU ------------- */
     .container .cont-menu {
         padding: 0px;
     }
     
-    .container .cont-menu .menu .home {
-        grid-column: 1/7;
-    }
-    
-    .container .cont-menu .menu .logout {
-        grid-column: 6/7;
-    }
-
     /*! -------- LOGIN -------------- */
     .container .cont-login {
         grid-column: 2/9;
